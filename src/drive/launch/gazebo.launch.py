@@ -262,6 +262,27 @@ def generate_launch_description():
     period=5.0,
     actions=[ekf_node]
     )
+
+
+# _____________________slam________________________
+
+    slam_toolbox_node = Node(
+        package='slam_toolbox',
+        executable='async_slam_toolbox_node',
+        name='slam_toolbox',
+        output='screen',
+        parameters=[
+            os.path.join(pkg_drive, 'config', 'slam_toolbox_params.yaml'),
+            {'use_sim_time': True}
+        ],
+    )
+
+    delayed_slam = TimerAction(
+        period=60.0,
+        actions=[slam_toolbox_node]
+    )
+
+
     # ------------------------------------------------------------------ #
     # Assemble
     # ------------------------------------------------------------------ #
@@ -275,4 +296,5 @@ def generate_launch_description():
         spawn_entity,
         spawn_controllers,
         delayed_ekf,
+        delayed_slam,
     ])
