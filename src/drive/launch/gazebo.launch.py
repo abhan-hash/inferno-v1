@@ -247,6 +247,21 @@ def generate_launch_description():
         )
     )
 
+    ekf_node = Node(
+    package='robot_localization',
+    executable='ekf_node',
+    name='ekf_filter_node',
+    output='screen',
+    parameters=[
+        os.path.join(pkg_drive, 'config', 'ekf_params.yaml'),
+        {'use_sim_time': True}
+        ],
+    )
+    
+    delayed_ekf = TimerAction(
+    period=5.0,
+    actions=[ekf_node]
+    )
     # ------------------------------------------------------------------ #
     # Assemble
     # ------------------------------------------------------------------ #
@@ -259,4 +274,5 @@ def generate_launch_description():
         gz_ros2_bridge,
         spawn_entity,
         spawn_controllers,
+        delayed_ekf,
     ])

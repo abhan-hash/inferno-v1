@@ -56,7 +56,7 @@ diff_drive_controller:
 
     # Enable odom → base_link TF publishing
     open_loop: false                # Use encoder feedback (not pure cmd_vel integration)
-    enable_odom_tf: true
+    enable_odom_tf: false
 
     # --- Velocity limits ---
     # Protects the rover from dangerously large commands
