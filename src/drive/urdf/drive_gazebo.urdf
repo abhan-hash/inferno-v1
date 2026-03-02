@@ -411,6 +411,12 @@
     </sensor>
   </gazebo>
 
+  <gazebo>
+    <plugin filename="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+  </gazebo> 
+
   <!-- _________________________IMU__________________________ -->
 
   <link name="imu_link">
@@ -431,7 +437,7 @@
     <origin xyz="0.30 -0.40 0.52" rpy="0 0 0"/>
   </joint>
 
-   <gazebo reference="imu_link">
+  <gazebo reference="imu_link">
     <sensor name="imu_sensor" type="imu">
         <always_on>1</always_on>
         <update_rate>100</update_rate>
@@ -439,7 +445,14 @@
         <topic>imu</topic>
         <ignition_frame_id>imu_link</ignition_frame_id>
      </sensor>
-    </gazebo>
+  </gazebo>
+
+
+  <gazebo>
+    <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
+    </plugin>
+  </gazebo>
+  
 
   <!-- ==================== ROS2_CONTROL ==================== -->
   <!--
