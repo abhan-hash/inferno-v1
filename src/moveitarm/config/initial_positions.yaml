@@ -1,0 +1,10 @@
+# Default initial positions for arm's ros2_control fake system
+
+initial_positions:
+  gripper: 0
+  pitch1: 0
+  pitch2: 0
+  pitch3: 0
+  yaw: 0
+  pitch4: 0
+  roll: 0

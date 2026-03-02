@@ -1,0 +1,86 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    # Controllers to load
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# -------------------------------------------------------
+# Differential Drive Controller
+# -------------------------------------------------------
+diff_drive_controller:
+  ros__parameters:
+    
+
+    # --- Wheel joints ---
+    # Right side: wheels 1, 2, 3
+    right_wheel_names:
+      - joint_wheel_1
+      - joint_wheel_2
+      - joint_wheel_3
+
+    # Left side: wheels 4, 5, 6
+    left_wheel_names:
+      - joint_wheel_4
+      - joint_wheel_5
+      - joint_wheel_6
+
+    # --- Physical parameters (TUNE THESE to match your rover) ---
+    # Distance between left and right wheel contact points (meters)
+    wheel_separation: 0.534
+
+    # Wheel radius (meters)
+    wheel_radius: 0.06
+
+    # Correction multipliers (1.0 = no correction, adjust if odometry drifts)
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    # --- Topics ---
+    # Input command topic
+    # Nav2 / teleop publishes here → controller reads it
+    # NOTE: diff_drive_controller subscribes to ~/cmd_vel by default (namespaced).
+    # The remapping in the launch file maps /cmd_vel → this controller's ~/cmd_vel.
+
+    # --- Odometry ---
+    publish_rate: 50.0              # Hz — how often to publish /odom
+    odom_frame_id: odom
+    base_frame_id: base_link
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+
+    # Enable odom → base_link TF publishing
+    open_loop: false                # Use encoder feedback (not pure cmd_vel integration)
+    enable_odom_tf: true
+
+    # --- Velocity limits ---
+    # Protects the rover from dangerously large commands
+    linear.x.has_velocity_limits: true
+    linear.x.max_velocity: 1.0     # m/s
+    linear.x.min_velocity: -1.0    # m/s
+    linear.x.has_acceleration_limits: true
+    linear.x.max_acceleration: 0.5 # m/s^2
+    linear.x.min_acceleration: -0.5
+
+    angular.z.has_velocity_limits: true
+    angular.z.max_velocity: 1.5    # rad/s
+    angular.z.min_velocity: -1.5
+    angular.z.has_acceleration_limits: true
+    angular.z.max_acceleration: 1.0
+    angular.z.min_acceleration: -1.0
+
+    # --- Command timeout ---
+    # Robot stops if no cmd_vel received within this time (seconds)
+    cmd_vel_timeout: 0.5
+
+# -------------------------------------------------------
+# Joint State Broadcaster
+# -------------------------------------------------------
+# No extra params needed — broadcasts all joint states on /joint_states
+joint_state_broadcaster:
+  ros__parameters: {}

@@ -1,0 +1,20 @@
+digraph G {
+"base_link" -> "arm_base"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "base"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base" -> "left_back"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"left_front" -> "left_bogie"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"base" -> "left_front"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"base" -> "right_back"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"right_front" -> "right_bogie"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"base" -> "right_front"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"right_bogie" -> "wheel_1"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"right_bogie" -> "wheel_2"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"right_back" -> "wheel_3"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"left_bogie" -> "wheel_4"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"left_bogie" -> "wheel_5"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+"left_back" -> "wheel_6"[label=" Broadcaster: default_authority\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1768425885.002286\nOldest transform: 1768425880.002192\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1768425885.0120373"[ shape=plaintext ] ;
+}->"base_link";
+}
