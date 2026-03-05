@@ -19,15 +19,15 @@ diff_drive_controller:
     # --- Wheel joints ---
     # Right side: wheels 1, 2, 3
     right_wheel_names:
-      - joint_wheel_1
-      - joint_wheel_2
-      - joint_wheel_3
-
-    # Left side: wheels 4, 5, 6
-    left_wheel_names:
       - joint_wheel_4
       - joint_wheel_5
       - joint_wheel_6
+
+    # Left side: wheels 4, 5, 6
+    left_wheel_names:
+      - joint_wheel_1
+      - joint_wheel_2
+      - joint_wheel_3
 
     # --- Physical parameters (TUNE THESE to match your rover) ---
     # Distance between left and right wheel contact points (meters)

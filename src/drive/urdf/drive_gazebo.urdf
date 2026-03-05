@@ -118,7 +118,7 @@
     <origin xyz="0.225 -0.18509 0" rpy="0.16161 1.4835 0.35684"/>
     <parent link="right_bogie"/>
     <child link="wheel_1"/>
-    <axis xyz="0.99619 -0.014024 -0.08602"/>
+    <axis xyz="-0.99619 0.014024 0.08602"/>
     <limit lower="-1000000" upper="1000000" effort="1000" velocity="1000"/>
   </joint>
 
@@ -146,7 +146,7 @@
     <origin xyz="-0.225 -0.18509 0" rpy="0.16161 1.4835 0.42392"/>
     <parent link="right_bogie"/>
     <child link="wheel_2"/>
-    <axis xyz="0.99619 -0.014024 -0.08602"/>
+    <axis xyz="-0.99619 0.014024 0.08602"/>
   </joint>
 
   <!-- RIGHT BACK -->
@@ -200,7 +200,7 @@
     <origin xyz="0.45337 -0.39 0" rpy="-2.98 -1.4835 2.1495"/>
     <parent link="right_back"/>
     <child link="wheel_3"/>
-    <axis xyz="0.99619 -0.014024 -0.08602"/>
+    <axis xyz="-0.99619 0.014024 0.08602"/>
   </joint>
 
   <!-- ===================== LEFT SIDE ===================== -->
@@ -278,7 +278,7 @@
     <origin xyz="-0.225 -0.18509 0.016876" rpy="0.16161 1.4835 -0.33202"/>
     <parent link="left_bogie"/>
     <child link="wheel_4"/>
-    <axis xyz="0.99619 -0.014024 -0.08602"/>
+    <axis xyz="-0.99619 0.014024 0.08602"/>
   </joint>
 
   <!-- WHEEL 5 — left bogie forward -->
@@ -302,7 +302,7 @@
     <origin xyz="0.225 -0.18509 0.016876" rpy="0.16161 1.4835 -1.252"/>
     <parent link="left_bogie"/>
     <child link="wheel_5"/>
-    <axis xyz="0.99619 -0.014024 -0.08602"/>
+    <axis xyz="-0.99619 0.014024 0.08602"/>
   </joint>
 
   <!-- LEFT BACK -->
@@ -353,7 +353,7 @@
     <origin xyz="0.45337 -0.39 0.034376" rpy="0.16161 1.4835 -0.74019"/>
     <parent link="left_back"/>
     <child link="wheel_6"/>
-    <axis xyz="0.99619 -0.014024 -0.08602"/>
+    <axis xyz="-0.99619 0.014024 0.08602"/>
   </joint>
 
 <!-- ____________________LIDAR________________________ -->
